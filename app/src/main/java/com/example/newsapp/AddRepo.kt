@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.newsapp.postdata.PostData
@@ -46,6 +47,8 @@ class AddRepo : AppCompatActivity() {
             repoPost.enqueue(object : retrofit2.Callback<PostData> {
                 override fun onResponse(call: Call<PostData>, response: Response<PostData>) {
                     println("MainActivity.onCreate 11-> scuess")
+
+                    Toast.makeText(this@AddRepo,"Add Success",Toast.LENGTH_SHORT).show()
                     finish()
                 }
 
